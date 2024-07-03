@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BookController!
+{% endblock %}
+
+{% block body %}
+	{% if app.user %}
+		<section class="max-w-screen-xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+			<div class="flex justify-center">
+				<h1 class="text-4xl">Book</h1>
+			</div>
+		</section>
+	{% endif %}
+
+    {% if app.user is not defined or app.user is null %}
+        <div class="max-w-screen-xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+            Non connecté
+        </div>
+    {% endif %}
+    
+{% endblock %}
