@@ -44,7 +44,7 @@ class BookController extends AbstractController
                 ->setCreatedAt(new \DateTime());
             $entityManager->persist($book);
             $entityManager->flush();
-            $this->addFlash('lime', 'Livre ajouté !');
+            $this->addFlash('indigo', 'Livre ajouté !');
             return $this->redirectToRoute('app_book_show');
         }
 
@@ -56,7 +56,7 @@ class BookController extends AbstractController
     {
         $entityManager->remove($book);
         $entityManager->flush();
-        $this->addFlash('lime', 'Livre supprimé !');
+        $this->addFlash('indigo', 'Livre supprimé !');
         return $this->redirectToRoute('app_book_show');
     }
 }
