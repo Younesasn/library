@@ -13,21 +13,29 @@ class AppFixtures extends Fixture
     {
         $faker = \Faker\Factory::create('fr_FR');
 
-        for ($i = 0; $i < 10; $i++) {
-            $book = new Book();
-            $book->setTitle($faker->sentence(2));
-            $book->setAuthor($faker->name());
-            $book->setDescription($faker->paragraph());
-            $book->setCreatedAt(new \DateTime());
-            $manager->persist($book);
-        }
-
         $user = new User();
         $user->setUsername('user');
         $user->setPassword('user');
         $user->setFirstname($faker->firstName());
         $user->setLastname($faker->lastName());
         $manager->persist($user);
+
+        $test = new User();
+        $test->setUsername('test');
+        $test->setPassword('test');
+        $test->setFirstname($faker->firstName());
+        $test->setLastname($faker->lastName());
+        $manager->persist($test);
+
+        for ($i = 0; $i < 10; $i++) {
+            $book = new Book();
+            $book->setTitle($faker->sentence(2));
+            $book->setAuthor($faker->name());
+            $book->setDescription($faker->paragraph());
+            $book->setCreatedAt(new \DateTime());
+            $book->setCreatedBy($user);
+            $manager->persist($book);
+        }
 
         $manager->flush();
     }

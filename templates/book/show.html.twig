@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<section class="max-w-screen-xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+		<div class="flex justify-center">
+			<div class="space-y-10">
+				<h1 class="text-4xl text-center">Mes livres</h1>
+				<table class="table-auto">
+					<thead>
+						<tr>
+							<th>Titre</th>
+							<th>Auteur</th>
+							<th>Description</th>
+							<th>Date d'ajout</th>
+							<th>Supprimer</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for book in books %}
+							<tr class="text-center">
+								<td>{{ book.title }}</td>
+								<td>{{ book.author }}</td>
+								<td class="text-sm">{{ book.description }}</td>
+								<td>{{ book.createdAt|date('d/m/y') }}</td>
+								<td><a href="{{ path('app_book_delete', {'id': book.id}) }}"><i class="fa-solid fa-xmark ms-3"></i></a></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<div class="flex justify-end">
+					<a href="{{ path('app_book_new') }}"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Ajouter un livre</button></a>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
