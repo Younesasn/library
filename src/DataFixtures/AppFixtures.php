@@ -27,7 +27,7 @@ class AppFixtures extends Fixture
         $test->setLastname($faker->lastName());
         $manager->persist($test);
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 9; $i++) {
             $book = new Book();
             $book->setTitle($faker->sentence(2));
             $book->setAuthor($faker->name());
