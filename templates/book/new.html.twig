@@ -3,26 +3,26 @@
 {% block title %}Nouveau livre{% endblock %}
 
 {% block body %}
-{{ form_start(form) }}
-	<section class="max-w-screen-xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex h-screen justify-center items-center absolute inset-x-0 z-40">
-		<div class="flex justify-center">
-			<div class="space-y-10 text-black">
-				<h1 class="text-4xl text-center">Ajouter un livre</h1>
-					<div class="">
-						{{ form_label(form.title) }}
-						{{ form_widget(form.title) }}
-					</div>
-					<div class="">
-						{{ form_label(form.author)}}
-						{{ form_widget(form.author) }}
-					</div>
-					<div class="">
-						{{ form_label(form.description)}}
-						{{ form_widget(form.description) }}
-					</div>
-				<button class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Ajouter</button>
-			</div>
-		</div>
-	</section>
-{{ form_end(form) }}
+    {{ form_start(form) }}
+    <section class="max-w-screen-xl mx-auto px-4 py-6 sm:px-6 lg:px-8 flex h-screen justify-center items-center relative z-10">
+        <div class="flex justify-center">
+            <div class="space-y-10 text-black">
+                <h1 class="text-4xl text-center">Ajouter un livre</h1>
+                <div>
+                    {{ form_label(form.title) }}
+                    {{ form_widget(form.title) }}
+                </div>
+                <div>
+                    {{ form_label(form.author) }}
+                    {{ form_widget(form.author) }}
+                </div>
+                <div>
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description) }}
+                </div>
+                <button class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Ajouter</button>
+            </div>
+        </div>
+    </section>
+    {{ form_end(form) }}
 {% endblock %}
