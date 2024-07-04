@@ -1,4 +1,4 @@
-<nav class="">
+<nav>
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{{ path('app_book') }}" class="flex items-center space-x-3">
             <span class="self-center text-2xl font-semibold whitespace-nowrap">Library</span>
@@ -23,7 +23,7 @@
     </div>
 </nav>
 
-{% for type, messages in app.flashes(['indigo', 'red']) %}
+{% for type, messages in app.flashes(['indigo']) %}
     {% for message in messages %}
         <div class="p-6 bg-indigo-400 flex items-center rounded-md mx-2 border-indigo-900" role="alert">
             {{ message }}

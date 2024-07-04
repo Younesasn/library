@@ -12,7 +12,7 @@ Commencez par installer les dépendances du projet :
 composer install
 ```
 
-Créez un fichier .env.local à la racine du projet avec la variable d'environnement suivante :
+Créez un fichier .env.local à la racine du projet pour configurer votre base de données :
 
 ```ini
 DATABASE_URL=mysql://db_user:db_password@127.0.0.1:port/db_name?serverVersion=8.0.32&charset=utf8mb4
@@ -21,12 +21,23 @@ DATABASE_URL=mysql://db_user:db_password@127.0.0.1:port/db_name?serverVersion=8.
 Puis, lancez la commande suivante pour créer la base de données et les tables :
 
 ```bash
-bin/console doctrine:database:create
-bin/console doctrine:migrations:migrate
+bin/console doctrine:database:create && bin/console doctrine:migrations:migrate
 ```
 
 Chargez ensuite les données fictives :
 
 ```bash
 bin/console doctrine:fixtures:load
+```
+
+Lancez la commande suivante pour construire le style CSS Tailwind :
+
+``` bash
+php bin/console tailwindcss:build --watch
+```
+
+Enfin, dans un autre terminal, lancez la commande suivante pour lancer le serveur web :
+
+```bash
+symfony serve --no-tls
 ```
