@@ -6,7 +6,7 @@
 			<div class="flex justify-center items-center h-screen">
 				<div class="space-y-10">
 					<h1 class="text-4xl text-center">Mes livres</h1>
-					<table>
+					<table class="table-auto">
 						<thead>
 							<tr class="text-xl">
 								<th>Titre</th>
@@ -18,7 +18,7 @@
 						</thead>
 						<tbody>
 							{% for book in books %}
-								<tr class="text-center text-xl">
+								<tr class="text-xl">
 									<td>{{ book.title }}</td>
 									<td>{{ book.author }}</td>
 									<td class="">{{ book.description }}</td>
